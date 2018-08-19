@@ -5,6 +5,8 @@
  
 ``` npm install ```
 
+Don't forget: ``` cd the-books-library ```
+
 and then:
 
 ``` npm start ```
