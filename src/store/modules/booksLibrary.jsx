@@ -52,7 +52,7 @@ export const getBooksFromGoogle = () => async(dispatch) => {
     .then(
         (results) => {
             let bookList = []
-            results.items.map(book => {return bookList.push({
+            results.items.map(book => {bookList.push({
                 id: book.id,
                 author: handleAuthors(book.volumeInfo.authors) || 'Unknown',
                 publishedDate: book.volumeInfo.publishedDate ? fixFormatDate(book.volumeInfo.publishedDate) : 'Unknown',
@@ -68,15 +68,15 @@ export const getBooksFromGoogle = () => async(dispatch) => {
     )
 }
 
-export const deleteBook = (bookId) => async(dispatch,state) => {
+export const deleteBook = (bookId) => (dispatch,state) => {
     const newBookList = state().booksLibrary.books.filter( b => b.id !== bookId)
     dispatch(updateLibraryReq(newBookList))
 }
 
-export const editBook = book =>  async(dispatch)  => {
+export const editBook = book => (dispatch)  => {
     dispatch(editBookReq(book))
 }
 
-export const addBook = book =>  async(dispatch)  => {
+export const addBook = book => (dispatch)  => {
     dispatch(AddBookReq(book))
 }

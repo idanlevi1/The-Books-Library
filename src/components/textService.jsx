@@ -80,5 +80,5 @@ export const fixFormatDate = (publishedDate) =>{
 const validDate = (date) =>{
     let bits = date.split('/');
     let d = new Date(bits[2], bits[1] - 1, bits[0])
-    return d && (d.getMonth() + 1) == bits[1]
+    return d && (d.getMonth() + 1) == bits[1] && bits[2].trim()!=='' && bits.length === 3
 }

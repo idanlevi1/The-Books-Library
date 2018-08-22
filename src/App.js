@@ -29,7 +29,6 @@ class App extends Component {
       <div style={{background:'#F7F7F7'}}>
         <NavBar
         booksLibrary={this.props.booksLibrary}
-        addBook={this.props.addBook}
         handleAdd={this.handleAdd}
         />
         <main className='container' style={{backgroundColor:'#DFE3EE',  position: 'relative',minHeight: '-webkit-fill-available'}} >
